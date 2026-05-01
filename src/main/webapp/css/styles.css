@@ -48,7 +48,9 @@
 
 body {
     font-family: var(--font-body);
-    background: var(--bg);
+    background:
+        linear-gradient(135deg, rgba(238, 242, 247, 0.88) 0%, rgba(244, 247, 252, 0.92) 100%),
+        url("https://primeraplana.com.ec/wp-content/uploads/2023/06/WhatsApp-Image-2023-06-27-at-10.15.42-PM.jpeg") center/cover no-repeat fixed;
     color: var(--text-body);
     min-height: 100vh;
     line-height: 1.6;
@@ -59,7 +61,9 @@ a:hover { color: var(--epn-blue-lt); text-decoration: none; }
 
 /* ── NAVBAR ───────────────────────────────────────────────────── */
 .navbar {
-    background: linear-gradient(90deg, var(--epn-navy) 0%, var(--epn-blue) 60%, var(--epn-blue-mid) 100%);
+    background: linear-gradient(90deg, rgba(13,31,78,0.85) 0%, rgba(26,56,104,0.85) 60%, rgba(30,77,140,0.85) 100%);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     border-bottom: 3px solid var(--epn-red);
     padding: 0 2rem;
     display: flex;
@@ -190,19 +194,21 @@ a:hover { color: var(--epn-blue-lt); text-decoration: none; }
 .form-control {
     width: 100%;
     padding: .65rem 1rem;
-    border: 1.5px solid var(--border);
+    border: 1.5px solid rgba(212, 220, 232, 0.6);
     border-radius: var(--radius-sm);
     font-family: var(--font-body);
     font-size: .93rem;
     transition: border-color .2s, box-shadow .2s, background .2s;
-    background: #fff;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     color: var(--text-body);
 }
 .form-control:focus {
     outline: none;
     border-color: var(--epn-blue-mid);
     box-shadow: 0 0 0 3px rgba(30,77,140,.13);
-    background: #fafcff;
+    background: rgba(255, 255, 255, 0.95);
 }
 .form-control::placeholder { color: var(--muted); opacity: .7; }
 textarea.form-control { resize: vertical; min-height: 110px; }
@@ -210,12 +216,17 @@ select.form-control { cursor: pointer; }
 
 /* ── TARJETAS ─────────────────────────────────────────────────── */
 .card {
-    background: var(--card);
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
-    border: 1px solid var(--border-lt);
+    border: 1px solid rgba(255, 255, 255, 0.5);
     overflow: hidden;
-    transition: box-shadow .25s, transform .25s;
+    transition: box-shadow .25s, transform .25s, background .25s;
+}
+.card:hover {
+    background: rgba(255, 255, 255, 0.8);
 }
 .card-body { padding: 1.4rem; }
 .card-title {
@@ -228,8 +239,8 @@ select.form-control { cursor: pointer; }
 .card-text { font-size: .875rem; color: var(--muted); line-height: 1.6; }
 .card-footer {
     padding: .9rem 1.4rem;
-    background: var(--bg-subtle);
-    border-top: 1px solid var(--border-lt);
+    background: rgba(244, 247, 252, 0.4);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -474,19 +485,21 @@ select.form-control { cursor: pointer; }
 .empty-state h3 { font-size: 1.15rem; font-weight: 700; color: var(--text); margin-bottom: .5rem; }
 
 /* ── TABLA ────────────────────────────────────────────────────── */
-.table { width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: .9rem; }
-.table thead tr { border-bottom: 2px solid var(--border); background: var(--bg-subtle); }
+.table { width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: .9rem; background: rgba(255,255,255,0.4); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-radius: var(--radius-sm); overflow: hidden; }
+.table thead tr { border-bottom: 2px solid rgba(212, 220, 232, 0.6); background: rgba(244, 247, 252, 0.65); }
 .table th { padding: .85rem 1rem; font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
-.table tbody tr { border-bottom: 1px solid var(--border-lt); transition: background .15s; }
-.table tbody tr:hover { background: var(--bg-subtle); }
+.table tbody tr { border-bottom: 1px solid rgba(232, 237, 245, 0.6); transition: background .15s; }
+.table tbody tr:hover { background: rgba(244, 247, 252, 0.85); }
 .table td { padding: .9rem 1rem; color: var(--text-body); }
 
 /* ── CHAT ─────────────────────────────────────────────────────── */
 .chat-box {
     height: 420px; overflow-y: auto;
-    background: var(--bg-subtle);
+    background: rgba(244, 247, 252, 0.45);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     padding: 1.2rem; border-radius: var(--radius-sm);
-    border: 1px solid var(--border-lt);
+    border: 1px solid rgba(255, 255, 255, 0.5);
     display: flex; flex-direction: column; gap: .6rem;
 }
 .msg { padding: .6rem 1rem; border-radius: 14px; max-width: 80%; word-wrap: break-word; font-size: .9rem; line-height: 1.5; }
@@ -496,9 +509,9 @@ select.form-control { cursor: pointer; }
 
 /* ── NOTIFICACIONES ───────────────────────────────────────────── */
 .notif-list { display: flex; flex-direction: column; gap: .75rem; max-width: 740px; }
-.notif-item { background: var(--card); border: 1px solid var(--border-lt); border-radius: var(--radius); padding: 1rem 1.25rem; display: flex; gap: 1rem; align-items: flex-start; box-shadow: var(--shadow); transition: box-shadow .2s; }
-.notif-item:hover { box-shadow: var(--shadow-md); }
-.notif-item.no-leida { border-left: 4px solid var(--epn-blue); background: #f4f8ff; }
+.notif-item { background: rgba(255, 255, 255, 0.65); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.5); border-radius: var(--radius); padding: 1rem 1.25rem; display: flex; gap: 1rem; align-items: flex-start; box-shadow: var(--shadow); transition: box-shadow .2s, transform .2s; }
+.notif-item:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.notif-item.no-leida { border-left: 4px solid var(--epn-blue); background: rgba(244, 248, 255, 0.75); }
 .notif-icon { font-size: 1.6rem; flex-shrink: 0; margin-top: .1rem; }
 .notif-body { flex: 1; }
 .notif-contenido { font-size: .92rem; color: var(--text-body); line-height: 1.5; margin-bottom: .3rem; }
