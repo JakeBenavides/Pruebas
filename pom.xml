@@ -8,7 +8,7 @@
   <groupId>org.example</groupId>
   <artifactId>GR06_1BT23622_26A</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <packaging>war</packaging>
+  <packaging>jar</packaging>
 
   <name>GR06 Proyecto Web</name>
 
