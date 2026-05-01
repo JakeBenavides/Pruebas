@@ -49,9 +49,71 @@
     </div>
 </div>
 <script>
-    // Scroll al final del chat al cargar
-    var chatBox = document.getElementById("chatBox");
-    chatBox.scrollTop = chatBox.scrollHeight;
+    const chatBox = document.getElementById("chatBox");
+    let messageCount = chatBox.querySelectorAll('.msg').length;
+
+    function scrollAlFinal() {
+        chatBox.scrollTop = chatBox.scrollHeight;
+    }
+    
+    // Scroll inicial
+    scrollAlFinal();
+
+    // Polling cada 2 segundos
+    setInterval(() => {
+        fetch(window.location.href)
+            .then(res => res.text())
+            .then(html => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                const newChatBox = doc.getElementById('chatBox');
+                if (newChatBox) {
+                    const newMessages = newChatBox.querySelectorAll('.msg');
+                    if (newMessages.length > messageCount) {
+                        chatBox.innerHTML = newChatBox.innerHTML;
+                        messageCount = newMessages.length;
+                        scrollAlFinal();
+                    }
+                }
+            })
+            .catch(err => console.error("Error actualizando el chat:", err));
+    }, 2000);
+
+    // Envío del formulario por AJAX
+    const form = document.querySelector('form');
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const inputMensaje = form.querySelector('input[name="mensaje"]');
+        const mensajeText = inputMensaje.value.trim();
+        if (!mensajeText) return;
+
+        const formData = new URLSearchParams(new FormData(form));
+        
+        // Limpiamos el input inmediatamente para mejor UX
+        inputMensaje.value = '';
+
+        fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }
+        }).then(() => {
+            // Actualizamos inmediatamente el chat tras enviar
+            fetch(window.location.href)
+                .then(res => res.text())
+                .then(html => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const newChatBox = doc.getElementById('chatBox');
+                    if (newChatBox) {
+                        chatBox.innerHTML = newChatBox.innerHTML;
+                        messageCount = newChatBox.querySelectorAll('.msg').length;
+                        scrollAlFinal();
+                    }
+                });
+        }).catch(err => console.error("Error enviando mensaje:", err));
+    });
 </script>
 </body>
 </html>
