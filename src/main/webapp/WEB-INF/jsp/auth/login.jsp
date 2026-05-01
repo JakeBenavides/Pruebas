@@ -6,7 +6,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar sesión — PoliServis</title>
-    <link href="https://primeraplana.com.ec/wp-content/uploads/2023/06/WhatsApp-Image-2023-06-27-at-10.15.42-PM.jpeg" rel="stylesheet">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styles.css">
 </head>
 <body>
