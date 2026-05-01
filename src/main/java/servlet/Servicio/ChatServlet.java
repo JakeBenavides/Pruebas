@@ -3,6 +3,7 @@ package servlet.Servicio;
 import dao.ConversacionDAO;
 import dao.MensajeDAO;
 import dao.ServicioDAO;
+import dao.SolicitudDAO;
 import dao.UsuarioDAO;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -12,6 +13,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import modelo.Conversacion;
 import modelo.Mensaje;
 import modelo.Servicio;
+import modelo.Solicitud;
 import modelo.Usuario;
 import util.GestorSesion;
 
@@ -27,6 +29,7 @@ public class ChatServlet extends HttpServlet {
     private final MensajeDAO mensajeDAO = new MensajeDAO();
     private final ServicioDAO servicioDAO = new ServicioDAO();
     private final UsuarioDAO usuarioDAO = new UsuarioDAO();
+    private final SolicitudDAO solicitudDAO = new SolicitudDAO();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -95,6 +98,11 @@ public class ChatServlet extends HttpServlet {
             }
 
             List<Mensaje> mensajes = mensajeDAO.listarPorConversacion(conversacion);
+
+            Optional<Solicitud> optSolicitud = solicitudDAO.buscarPorUsuarioYServicio(cliente, servicio);
+            if (optSolicitud.isPresent()) {
+                req.setAttribute("estadoSolicitud", optSolicitud.get().getEstado().toString());
+            }
 
             req.setAttribute("conversacion", conversacion);
             req.setAttribute("mensajes", mensajes);

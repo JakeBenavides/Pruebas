@@ -51,15 +51,20 @@ public class SolicitudDAO {
 
     // VERIFICAR SI YA EXISTE - evita solicitudes duplicadas (ControlValidacion del diagrama)
     public boolean existeSolicitud(Usuario usuario, Servicio servicio) {
+        return buscarPorUsuarioYServicio(usuario, servicio).isPresent();
+    }
+
+    public Optional<Solicitud> buscarPorUsuarioYServicio(Usuario usuario, Servicio servicio) {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            String hql = "SELECT COUNT(s) FROM Solicitud s WHERE s.usuario = :usuario AND s.servicio = :servicio";
-            Long count = session.createQuery(hql, Long.class)
+            String hql = "FROM Solicitud s WHERE s.usuario = :usuario AND s.servicio = :servicio";
+            Solicitud sol = session.createQuery(hql, Solicitud.class)
                     .setParameter("usuario", usuario)
                     .setParameter("servicio", servicio)
+                    .setMaxResults(1)
                     .uniqueResult();
-            return count != null && count > 0;
+            return Optional.ofNullable(sol);
         } catch (Exception e) {
-            throw new RuntimeException("Error al verificar solicitud", e);
+            throw new RuntimeException("Error al buscar solicitud por usuario y servicio", e);
         }
     }
 

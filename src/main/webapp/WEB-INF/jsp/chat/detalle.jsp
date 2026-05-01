@@ -24,6 +24,11 @@
                 <div>
                     <h3 style="margin:0;">${otroUsuario.nombre}</h3>
                     <span class="text-muted" style="font-size:0.85rem;">${conversacion.servicio.tituloServicio}</span>
+                    <c:if test="${not empty estadoSolicitud}">
+                        <span class="badge ${estadoSolicitud == 'SOLICITADO' ? 'badge-primary' : (estadoSolicitud == 'EN_PROGRESO' ? 'badge-accent' : 'badge-secondary')}" style="font-size:0.7rem; margin-left:0.5rem; vertical-align:middle;">
+                            ${estadoSolicitud}
+                        </span>
+                    </c:if>
                 </div>
                 <a href="${pageContext.request.contextPath}/chat" class="text-muted" style="font-size:0.9rem;">← Volver</a>
             </div>
