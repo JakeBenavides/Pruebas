@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio — PoliServis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styles.css">
 </head>
 <body>
@@ -23,6 +24,7 @@
 
     <%-- Hero banner EPN --%>
     <div class="hero-banner">
+        <div class="hero-stripe"></div>
         <div class="epn-tag">Escuela Politécnica Nacional</div>
         <h1>Hola, <c:choose>
             <c:when test="${not empty sessionScope.usuarioActual}">${sessionScope.usuarioActual.nombre}</c:when>
