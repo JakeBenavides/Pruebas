@@ -45,7 +45,7 @@
                 </c:forEach>
             </div>
             
-            <form action="${pageContext.request.contextPath}/chat" method="post" style="display:flex; gap:0.5rem; margin-top:1rem;">
+            <form id="chatForm" action="${pageContext.request.contextPath}/chat" method="post" style="display:flex; gap:0.5rem; margin-top:1rem;">
                 <input type="hidden" name="idConversacion" value="${conversacion.idConversacion}">
                 <input type="text" name="mensaje" class="form-control" placeholder="Escribe un mensaje..." required autocomplete="off" style="flex:1;">
                 <button type="submit" class="btn btn-primary">Enviar</button>
@@ -85,8 +85,9 @@
     }, 2000);
 
     // Envío del formulario por AJAX
-    const form = document.querySelector('form');
-    form.addEventListener('submit', (e) => {
+    const form = document.getElementById('chatForm');
+    if (form) {
+        form.addEventListener('submit', (e) => {
         e.preventDefault();
         const inputMensaje = form.querySelector('input[name="mensaje"]');
         const mensajeText = inputMensaje.value.trim();
@@ -118,7 +119,8 @@
                     }
                 });
         }).catch(err => console.error("Error enviando mensaje:", err));
-    });
+        });
+    }
 </script>
 </body>
 </html>
