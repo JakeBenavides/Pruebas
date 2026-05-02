@@ -3,8 +3,6 @@ FROM maven:3.9.6-eclipse-temurin-17-alpine AS build
 WORKDIR /app
 COPY pom.xml .
 COPY src ./src
-# Usar caché local de Maven para no descargar todo desde internet
-COPY .m2 /root/.m2
 RUN mvn clean package -DskipTests
 
 # Etapa 2: Deploy en Tomcat
