@@ -8,26 +8,30 @@ services:
       MYSQL_ROOT_PASSWORD: 12345
       MYSQL_DATABASE: poliservis
     ports:
-      - "3306:3306"
+      - "3307:3306"
     volumes:
       - mysql-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-p12345"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   app:
-    build: .
+    image: jimmynow/uniservicios:1.0
     container_name: poliservis-app
     ports:
       - "8080:8080"
     depends_on:
-      - db
-    environment:
-      - WAIT_HOSTS=db:3306
+      db:
+        condition: service_healthy
 
   jenkins:
     image: jenkins/jenkins:lts
     container_name: poliservis-jenkins
     user: root
     ports:
-      - "8081:8080"
+      - "8082:8080"
       - "50000:50000"
     volumes:
       - jenkins-data:/var/jenkins_home
