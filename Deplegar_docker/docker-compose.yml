@@ -1,0 +1,54 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8.3
+    container_name: poliservis-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345
+      MYSQL_DATABASE: poliservis
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - poliservis-net
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-p12345"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+  app:
+    # AQUÍ ESTÁ LA MAGIA: Ya no compila código, solo descarga tu app de internet
+    image: jimmynow/poliservis-app:latest
+    container_name: poliservis-app
+    ports:
+      - "8085:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - poliservis-net
+
+  jenkins:
+    image: jenkins/jenkins:lts
+    container_name: poliservis-jenkins
+    user: root
+    ports:
+      - "8082:8080"
+      - "50000:50000"
+    volumes:
+      - jenkins-data:/var/jenkins_home
+    networks:
+      - poliservis-net
+
+volumes:
+  mysql-data:
+  jenkins-data:
+
+networks:
+  poliservis-net:
+    driver: bridge
