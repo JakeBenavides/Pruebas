@@ -6,10 +6,10 @@
             com.mysql.cj.jdbc.Driver
         </property>
         <property name="hibernate.connection.url">
-            jdbc:mysql://db:3306/poliservis?useSSL=false&amp;serverTimezone=UTC&amp;characterEncoding=utf8&amp;allowPublicKeyRetrieval=true
+            jdbc:mysql://switchback.proxy.rlwy.net:11480/railway?useSSL=false&amp;serverTimezone=UTC&amp;characterEncoding=utf8&amp;allowPublicKeyRetrieval=true
         </property>
         <property name="hibernate.connection.username">root</property>
-        <property name="hibernate.connection.password">12345</property>
+        <property name="hibernate.connection.password">MSpEBqKZSguiYPGloGJAtNTrxrFtcwzA</property>
         <!-- Dialecto MySQL 8 -->
         <property name="hibernate.dialect">
             org.hibernate.dialect.MySQLDialect
