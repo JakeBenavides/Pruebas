@@ -1,0 +1,15 @@
+Started by user [8mha:////4KVwTLq77j2OPNyajdZq8lek6TwTd/yBvCzPFNFRXHV8AAAAmh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzuEgY+/dLi1CL9rMzc3Mq8/HIA6rqZG8MAAAA=[0mJimmy Arias
+Running as SYSTEM
+Building in workspace /var/jenkins_home/workspace/Test
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/Test/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/JakeBenavides/Pruebas.git # timeout=10
+Fetching upstream changes from https://github.com/JakeBenavides/Pruebas.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.47.3'
+ > git fetch --tags --force --progress -- https://github.com/JakeBenavides/Pruebas.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+Build was aborted
+Aborted by [8mha:////4KVwTLq77j2OPNyajdZq8lek6TwTd/yBvCzPFNFRXHV8AAAAmh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzuEgY+/dLi1CL9rMzc3Mq8/HIA6rqZG8MAAAA=[0mJimmy Arias
+Finished: ABORTED

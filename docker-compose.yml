@@ -46,14 +46,18 @@ services:
     ports:
       - "8082:8080"
       - "50000:50000"
+    dns:
+      - 8.8.8.8
+      - 1.1.1.1
     volumes:
-      - ./jenkins_data:/var/jenkins_home
+      - jenkins-data:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock
     networks:
       - poliservis-net
 
 volumes:
   mysql-data:
+  jenkins-data:
 
 networks:
   poliservis-net:
