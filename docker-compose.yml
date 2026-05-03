@@ -50,14 +50,13 @@ services:
       - 8.8.8.8
       - 1.1.1.1
     volumes:
-      - jenkins-data:/var/jenkins_home
+      - ./jenkins_data:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock
     networks:
       - poliservis-net
 
 volumes:
   mysql-data:
-  jenkins-data:
 
 networks:
   poliservis-net:

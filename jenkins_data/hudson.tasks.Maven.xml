@@ -2,7 +2,7 @@
 <hudson.tasks.Maven_-DescriptorImpl>
   <installations>
     <hudson.tasks.Maven_-MavenInstallation>
-      <name>maven 3.9</name>
+      <name>3.8</name>
       <properties>
         <hudson.tools.InstallSourceProperty>
           <installers>

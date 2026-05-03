@@ -30,12 +30,10 @@
       <providerId>default</providerId>
     </org.jenkinsci.plugins.displayurlapi.user.PreferredProviderUserProperty>
     <hudson.model.PaneStatusProperties>
-      <collapsed>
-        <string>executors</string>
-      </collapsed>
+      <collapsed/>
     </hudson.model.PaneStatusProperties>
     <jenkins.security.seed.UserSeedProperty>
-      <seed>dde67f4e28793ff3</seed>
+      <seed>41a978580e10639d</seed>
     </jenkins.security.seed.UserSeedProperty>
     <hudson.search.UserSearchProperty>
       <insensitiveSearch>true</insensitiveSearch>
@@ -45,7 +43,7 @@
       <flags/>
     </jenkins.model.experimentalflags.UserExperimentalFlagsProperty>
     <hudson.security.HudsonPrivateSecurityRealm_-Details>
-      <passwordHash>#jbcrypt:$2a$10$0TSbmcytUgqc3urut/Wt2ORxXHAWNqwl85H6bHM.f.hzhasTbwst2</passwordHash>
+      <passwordHash>#jbcrypt:$2a$10$OMQZzm/fjdnpDvUWq0OYEusnRhoG6idWfdUztMe6G5sabDOrbpJu.</passwordHash>
     </hudson.security.HudsonPrivateSecurityRealm_-Details>
     <hudson.tasks.Mailer_-UserProperty plugin="mailer@534.v1b_36f5864073">
       <emailAddress>jimmy.arias@epn.edu.ec</emailAddress>
@@ -55,11 +53,5 @@
         <tokenList/>
       </tokenStore>
     </jenkins.security.ApiTokenProperty>
-    <jenkins.security.LastGrantedAuthoritiesProperty>
-      <roles>
-        <string>authenticated</string>
-      </roles>
-      <timestamp>1777765803115</timestamp>
-    </jenkins.security.LastGrantedAuthoritiesProperty>
   </properties>
 </user>

@@ -1,4 +1,4 @@
-Started by user [8mha:////4KVwTLq77j2OPNyajdZq8lek6TwTd/yBvCzPFNFRXHV8AAAAmh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzuEgY+/dLi1CL9rMzc3Mq8/HIA6rqZG8MAAAA=[0mJimmy Arias
+Started by user [8mha:////4KbWxLFTNk+o1TsokPvoKQHv2JZq5YAIxaeMXTZs1FjXAAAAmh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzuEgY+/dLi1CL9rMzc3Mq8/HIA6rqZG8MAAAA=[0mJimmy Arias
 Running as SYSTEM
 Building in workspace /var/jenkins_home/workspace/Test
 The recommended git tool is: NONE
@@ -10,6 +10,107 @@ Fetching upstream changes from https://github.com/JakeBenavides/Pruebas.git
  > git --version # timeout=10
  > git --version # 'git version 2.47.3'
  > git fetch --tags --force --progress -- https://github.com/JakeBenavides/Pruebas.git +refs/heads/*:refs/remotes/origin/* # timeout=10
-Build was aborted
-Aborted by [8mha:////4KVwTLq77j2OPNyajdZq8lek6TwTd/yBvCzPFNFRXHV8AAAAmh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzuEgY+/dLi1CL9rMzc3Mq8/HIA6rqZG8MAAAA=[0mJimmy Arias
-Finished: ABORTED
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision 88dfd735a9af11f219f0cfdfbd4918ed7d13cbf7 (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 88dfd735a9af11f219f0cfdfbd4918ed7d13cbf7 # timeout=10
+Commit message: "jenkins a full"
+ > git rev-list --no-walk 88dfd735a9af11f219f0cfdfbd4918ed7d13cbf7 # timeout=10
+[Test] $ /var/jenkins_home/tools/hudson.tasks.Maven_MavenInstallation/3.8/bin/mvn clean compile test package -DskipTests
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< org.example:GR06_1BT23622_26A >--------------------
+[INFO] Building GR06 Proyecto Web 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ war ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ GR06_1BT23622_26A ---
+[INFO] Deleting /var/jenkins_home/workspace/Test/target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ GR06_1BT23622_26A ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ GR06_1BT23622_26A ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 46 source files with javac [debug target 11] to target/classes
+[8mha:////4PkgdxcwfRxa2uPlHDyHjz6eBgKywEjShqgd5gAEmv3dAAAAYh+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6SeOJwgmrt9CSsTA0NFEYMUVEtyfl5xfk6qnjOEBilkgABGkMICAEQzmI1iAAAA[0m[WARNING] system modules path not set in conjunction with -source 11
+[INFO] /var/jenkins_home/workspace/Test/src/main/java/test/PruebaHibernate.java: /var/jenkins_home/workspace/Test/src/main/java/test/PruebaHibernate.java uses or overrides a deprecated API.
+[INFO] /var/jenkins_home/workspace/Test/src/main/java/test/PruebaHibernate.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ GR06_1BT23622_26A ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ GR06_1BT23622_26A ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 46 source files with javac [debug target 11] to target/classes
+[8mha:////4PkgdxcwfRxa2uPlHDyHjz6eBgKywEjShqgd5gAEmv3dAAAAYh+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6SeOJwgmrt9CSsTA0NFEYMUVEtyfl5xfk6qnjOEBilkgABGkMICAEQzmI1iAAAA[0m[WARNING] system modules path not set in conjunction with -source 11
+[INFO] /var/jenkins_home/workspace/Test/src/main/java/test/PruebaHibernate.java: /var/jenkins_home/workspace/Test/src/main/java/test/PruebaHibernate.java uses or overrides a deprecated API.
+[INFO] /var/jenkins_home/workspace/Test/src/main/java/test/PruebaHibernate.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ GR06_1BT23622_26A ---
+[INFO] skip non existing resourceDirectory /var/jenkins_home/workspace/Test/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ GR06_1BT23622_26A ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 5 source files with javac [debug target 11] to target/test-classes
+[8mha:////4PkgdxcwfRxa2uPlHDyHjz6eBgKywEjShqgd5gAEmv3dAAAAYh+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6SeOJwgmrt9CSsTA0NFEYMUVEtyfl5xfk6qnjOEBilkgABGkMICAEQzmI1iAAAA[0m[WARNING] system modules path not set in conjunction with -source 11
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ GR06_1BT23622_26A ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ GR06_1BT23622_26A ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ GR06_1BT23622_26A ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 46 source files with javac [debug target 11] to target/classes
+[8mha:////4PkgdxcwfRxa2uPlHDyHjz6eBgKywEjShqgd5gAEmv3dAAAAYh+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6SeOJwgmrt9CSsTA0NFEYMUVEtyfl5xfk6qnjOEBilkgABGkMICAEQzmI1iAAAA[0m[WARNING] system modules path not set in conjunction with -source 11
+[INFO] /var/jenkins_home/workspace/Test/src/main/java/test/PruebaHibernate.java: /var/jenkins_home/workspace/Test/src/main/java/test/PruebaHibernate.java uses or overrides a deprecated API.
+[INFO] /var/jenkins_home/workspace/Test/src/main/java/test/PruebaHibernate.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ GR06_1BT23622_26A ---
+[INFO] skip non existing resourceDirectory /var/jenkins_home/workspace/Test/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ GR06_1BT23622_26A ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 5 source files with javac [debug target 11] to target/test-classes
+[8mha:////4PkgdxcwfRxa2uPlHDyHjz6eBgKywEjShqgd5gAEmv3dAAAAYh+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6SeOJwgmrt9CSsTA0NFEYMUVEtyfl5xfk6qnjOEBilkgABGkMICAEQzmI1iAAAA[0m[WARNING] system modules path not set in conjunction with -source 11
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ GR06_1BT23622_26A ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- war:3.3.2:war (default-war) @ GR06_1BT23622_26A ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [GR06_1BT23622_26A] in [/var/jenkins_home/workspace/Test/target/GR06_1BT23622_26A]
+[INFO] Processing war project
+[INFO] Copying webapp resources [/var/jenkins_home/workspace/Test/src/main/webapp]
+[INFO] Building war: /var/jenkins_home/workspace/Test/target/GR06_1BT23622_26A.war
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  45.184 s
+[INFO] Finished at: 2026-05-03T01:03:01Z
+[INFO] ------------------------------------------------------------------------
+[Test] $ /bin/sh -xe /tmp/jenkins709558964866540708.sh
++ java -cp target/classes util.JenkinsDetectorMain
+╔═══════════════════════════════════════════╗
+║   UniServicios — CI Environment Detector   ║
+╚═══════════════════════════════════════════╝
+
+✅  ENTORNO DETECTADO: Jenkins CI/CD
+
+  Información del Build:
+    JOB_NAME    → Test
+    BUILD_NUMBER→ 2
+    BUILD_ID    → 2
+    BUILD_URL   → http://localhost:8082/job/Test/2/
+    GIT_BRANCH  → origin/main
+    GIT_COMMIT  → 88dfd735...
+    WORKSPACE   → /var/jenkins_home/workspace/Test
+
+═══════════════════════════════════════════
+  Entorno Java:
+    Java Version → 21.0.10
+    OS           → Linux
+    Arch         → amd64
+Finished: SUCCESS

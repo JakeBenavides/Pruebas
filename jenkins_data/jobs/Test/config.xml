@@ -33,7 +33,7 @@
   <builders>
     <hudson.tasks.Maven>
       <targets>clean compile test package -DskipTests</targets>
-      <mavenName>maven 3.9</mavenName>
+      <mavenName>3.8</mavenName>
       <usePrivateRepository>false</usePrivateRepository>
       <settings class="jenkins.mvn.DefaultSettingsProvider"/>
       <globalSettings class="jenkins.mvn.DefaultGlobalSettingsProvider"/>
