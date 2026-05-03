@@ -1,0 +1,3 @@
+# Forzar saltos de linea Linux (LF) para los scripts ejecutables de Jenkins
+# Esto previene que Windows rompa los comandos descargados en la carpeta jenkins_data
+jenkins_data/tools/**/bin/* text eol=lf
